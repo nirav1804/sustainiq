@@ -1775,11 +1775,8 @@ Write the complete report section. If data shows "Not submitted", note it as "Da
       Billing.incrementAiUsage(org.id);
       addToast({msg:`${fw} report generated & saved`,type:'ok',icon:'✦'});
     } catch(e) {
-      const msg = e.message?.includes('Failed to fetch')
-        ? 'CORS error: AI proxy not configured. See DEPLOY.txt for Cloudflare Worker setup.'
-        : `Error: ${e.message}`;
-      setOutput('⚠ ' + msg + '\n\nThe rest of the platform works fully. Set up the proxy to enable AI reports.');
-      addToast({msg:'AI report unavailable - proxy needed',type:'err',icon:'⚠'});
+      setOutput('⚠ Error: ' + e.message + '\n\nProxy URL: ' + PROXY + '\n\nIf this says Failed to fetch, check your Cloudflare worker is deployed and ANTHROPIC_API_KEY secret is set.');
+      addToast({msg:'Report generation failed',type:'err',icon:'⚠'});
     }
     setLoading(false);
   }
