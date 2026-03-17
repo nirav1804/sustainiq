@@ -1758,9 +1758,7 @@ Write the complete report section. If data shows "Not submitted", note it as "Da
 
     // API_PROXY_URL is set in .env.local for local dev, or as GitHub Actions secret for production
     // Falls back to direct Anthropic call (works in Claude artifact environment)
-    const PROXY = typeof import.meta !== 'undefined' && import.meta.env?.VITE_PROXY_URL
-      ? import.meta.env.VITE_PROXY_URL
-      : 'https://api.anthropic.com/v1/messages';
+    const PROXY = const PROXY = 'https://sustainiq-proxy.nirav4uall.workers.dev';
 
     try {
       const res = await fetch(PROXY, {
