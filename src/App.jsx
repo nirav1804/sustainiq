@@ -1756,7 +1756,7 @@ ${frameworkInstructions[fw]}
 
 Write the complete report section. If data shows "Not submitted", note it as "Data pending submission" and recommend the disclosure. Include 2030/2050 SBTi-aligned targets. Use formal ESG disclosure language suitable for statutory auditor review.`;
 
-    const PROXY = 'https://sustainiq-proxy.nirav4uall.workers.dev';
+    const PROXY = 'https://sustainiq-proxy2.nirav4uall.workers.dev';
 
     try {
       const res = await fetch(PROXY, {
