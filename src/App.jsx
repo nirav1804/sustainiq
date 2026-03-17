@@ -1756,9 +1756,7 @@ ${frameworkInstructions[fw]}
 
 Write the complete report section. If data shows "Not submitted", note it as "Data pending submission" and recommend the disclosure. Include 2030/2050 SBTi-aligned targets. Use formal ESG disclosure language suitable for statutory auditor review.`;
 
-    // API_PROXY_URL is set in .env.local for local dev, or as GitHub Actions secret for production
-    // Falls back to direct Anthropic call (works in Claude artifact environment)
-    const PROXY = const PROXY = 'https://sustainiq-proxy.nirav4uall.workers.dev';
+    const PROXY = 'https://sustainiq-proxy.nirav4uall.workers.dev';
 
     try {
       const res = await fetch(PROXY, {
