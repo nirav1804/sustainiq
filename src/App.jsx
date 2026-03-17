@@ -1774,12 +1774,10 @@ Write the complete report section. If data shows "Not submitted", note it as "Da
       ReportsService.save(org.id, user.id, fw, text, {sector,year,fw});
       Billing.incrementAiUsage(org.id);
       addToast({msg:`${fw} report generated & saved`,type:'ok',icon:'✦'});
-    } catch(e) {
-      setOutput('⚠ Error: ' + e.message + '\n\nProxy URL: ' + PROXY + '\n\nIf this says Failed to fetch, check your Cloudflare worker is deployed and ANTHROPIC_API_KEY secret is set.');
-      addToast({msg:'Report generation failed',type:'err',icon:'⚠'});
+   } catch(e) {
+      setOutput('ERROR: ' + e.message);
+      addToast({msg:'Failed',type:'err'});
     }
-    setLoading(false);
-  }
 
   const used = org.aiReportsUsed || 0;
   const limit = PLANS_CONFIG[org.plan]?.aiLimit || 10;
